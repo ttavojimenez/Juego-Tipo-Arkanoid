@@ -27,4 +27,12 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<BallPhysics>().ResetBall();
         FindObjectOfType<PlayerMovement>().ResetPlayer();
     }
+
+    public void CheckLevelComplete()
+    {
+        if(transform.childCount <=1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 }

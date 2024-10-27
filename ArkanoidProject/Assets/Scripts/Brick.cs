@@ -8,7 +8,10 @@ public class Brick : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Ball"))
         {
+            FindObjectOfType<GameManager>().CheckLevelComplete();
+            
             Destroy(gameObject);
+
         }
     }
 }
