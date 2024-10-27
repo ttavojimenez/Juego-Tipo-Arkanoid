@@ -8,7 +8,7 @@ public class BallPhysics : MonoBehaviour
     public Rigidbody2D rigidBody2D;
 
     // Speed at which the ball moves
-    public float speed = 10f; // Using a lower value since it's now directly controlling velocity
+    public float speed = 6f; // Using a lower value since it's now directly controlling velocity
 
     // Start is called before the first frame update
     void Start()
