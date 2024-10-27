@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class BallPhysics : MonoBehaviour
 {
-    // Reference to the Rigidbody2D component
     public Rigidbody2D rigidBody2D;
+    public float speed = 6f;
+    private Vector2 startPosition;
 
-    // Speed at which the ball moves
-    public float speed = 6f; // Using a lower value since it's now directly controlling velocity
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        // Set initial velocity with a random x value and consistent y value
-        Vector2 velocity = new Vector2(Random.Range(-1f, 1f), 1).normalized * speed;
+        startPosition = transform.position;
+        LaunchBall();
+    }
 
-        // Directly assign the velocity to the Rigidbody2D
+    // Method to launch the ball with a random x direction
+    private void LaunchBall()
+    {
+        Vector2 velocity = new Vector2(Random.Range(-1f, 1f), 1).normalized * speed;
         rigidBody2D.velocity = velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("GameOver"))
+        if (collision.gameObject.CompareTag("GameOver"))
         {
             FindObjectOfType<GameManager>().LoseLife();
         }
+    }
+
+    // Resets the ball position and launches it again after reset
+    public void ResetBall()
+    {
+        transform.position = startPosition;
+        rigidBody2D.velocity = Vector2.zero;
+        Invoke("LaunchBall", 0.5f); // Delay before relaunching
     }
 }
