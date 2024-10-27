@@ -19,4 +19,12 @@ public class BallPhysics : MonoBehaviour
         // Directly assign the velocity to the Rigidbody2D
         rigidBody2D.velocity = velocity;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("GameOver"))
+        {
+            FindObjectOfType<GameManager>().LoseLife();
+        }
+    }
 }
