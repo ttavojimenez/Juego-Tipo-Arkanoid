@@ -1,23 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    public int points = 100; // Points that this block adds when destroyed
+    public GameObject[] powerUps; // Array of Power-Up prefabs
+    public float powerUpDropChance = 0.2f; // 20% drop chance
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            // Add points when the block is destroyed
-            FindObjectOfType<GameManager>().AddPoints(points);
+            FindObjectOfType<GameManager>().AddPoints(100);
 
-            // Check if the level is complete
-            FindObjectOfType<GameManager>().CheckLevelComplete();
-            
-            // Destroy the block
+            // Check if a Power-Up should drop
+            if (Random.value < powerUpDropChance)
+            {
+                int randomIndex = Random.Range(0, powerUps.Length);
+                Instantiate(powerUps[randomIndex], transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
     }
 }
+

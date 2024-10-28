@@ -10,7 +10,7 @@ public class BallPhysics : MonoBehaviour
 
     public AudioSource audioSource;
 
-    public AudioClip playerSound, brickSound, wallSound, gameOverSound;
+    public AudioClip playerSound, brickSound, wallSound, gameOverSound,strongBrickSound;
     private void Start()
     {
         startPosition = transform.position;
@@ -42,6 +42,12 @@ public class BallPhysics : MonoBehaviour
         if (collision.gameObject.GetComponent<Brick>())
         {
             audioSource.clip = brickSound;
+            audioSource.Play();
+        }
+
+        if (collision.gameObject.GetComponent<StrongBrick>())
+        {
+            audioSource.clip = strongBrickSound;
             audioSource.Play();
         }
 
