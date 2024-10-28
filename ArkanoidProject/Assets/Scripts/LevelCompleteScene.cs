@@ -10,7 +10,7 @@ public class LevelCompleteScene : MonoBehaviour
 
     private void Start()
     {
-        DisplayScore(); // Calls the method to display the score when the scene starts
+        
     }
 
     // Method to load the next level
@@ -35,12 +35,5 @@ public class LevelCompleteScene : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    // Method to display the final score
-    private void DisplayScore()
-    {
-        // Assigns the score from the GameManager to the score UI in the scene
-        scoreText.text = GameManager.finalScore + " POINTS";
     }
 }

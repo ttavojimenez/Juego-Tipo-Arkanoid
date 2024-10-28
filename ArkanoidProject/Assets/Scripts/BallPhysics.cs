@@ -8,6 +8,9 @@ public class BallPhysics : MonoBehaviour
     public float speed = 6f;
     private Vector2 startPosition;
 
+    public AudioSource audioSource;
+
+    public AudioClip playerSound, brickSound, wallSound, gameOverSound;
     private void Start()
     {
         startPosition = transform.position;
@@ -25,7 +28,27 @@ public class BallPhysics : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("GameOver"))
         {
+            audioSource.clip = gameOverSound;
+            audioSource.Play();
             FindObjectOfType<GameManager>().LoseLife();
+        }
+
+        if (collision.gameObject.GetComponent<PlayerMovement>())
+        {
+            audioSource.clip = playerSound;
+            audioSource.Play();
+        }
+
+        if (collision.gameObject.GetComponent<Brick>())
+        {
+            audioSource.clip = brickSound;
+            audioSource.Play();
+        }
+
+        if (collision.transform.CompareTag("Wall"))
+        {
+            audioSource.clip = wallSound;
+            audioSource.Play();
         }
     }
 
