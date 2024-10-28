@@ -34,6 +34,6 @@ public class BallPhysics : MonoBehaviour
     {
         transform.position = startPosition;
         rigidBody2D.velocity = Vector2.zero;
-        Invoke("LaunchBall", 0.5f); // Delay before relaunching
+        Invoke("LaunchBall", 1.0f); // Delay before relaunching
     }
 }

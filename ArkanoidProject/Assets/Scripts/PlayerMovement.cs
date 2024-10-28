@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rigidbody2D;
+    public Rigidbody2D playerRigidbody2D;
     public float moveSpeed = 20f;
     private Vector2 startPosition;
 
@@ -16,13 +16,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float inputValue = Input.GetAxisRaw("Horizontal");
-        rigidbody2D.velocity = new Vector2(inputValue * moveSpeed, 0);
+        playerRigidbody2D.velocity = new Vector2(inputValue * moveSpeed, 0);
     }
 
     // Method to reset the player's position and velocity
     public void ResetPlayer()
     {
         transform.position = startPosition;
-        rigidbody2D.velocity = Vector2.zero;
+        playerRigidbody2D.velocity = Vector2.zero;
     }
 }

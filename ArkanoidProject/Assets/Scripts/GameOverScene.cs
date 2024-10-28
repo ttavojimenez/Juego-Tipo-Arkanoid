@@ -6,21 +6,21 @@ using TMPro;
 
 public class GameOverScene : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText; // Referencia al texto para el puntaje
+    public TextMeshProUGUI scoreText; // Reference to the text for the score
 
     private void Start()
     {
-        // Mostrar el puntaje final en el texto
+        // Display the final score in the text
         scoreText.text = GameManager.finalScore + " POINTS";
     }
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("Level1"); // Cargar el primer nivel nuevamente
+        SceneManager.LoadScene("Level1"); // Reload the first level
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu"); // Cargar la escena del Menú Principal
+        SceneManager.LoadScene("MainMenu"); // Load the Main Menu scene
     }
 }

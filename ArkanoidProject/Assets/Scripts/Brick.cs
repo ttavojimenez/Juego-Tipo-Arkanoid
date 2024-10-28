@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    public int points = 100; // Puntos que este bloque añade al ser destruido
+    public int points = 100; // Points that this block adds when destroyed
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ball"))
         {
-            // Sumar puntos al destruir el bloque
+            // Add points when the block is destroyed
             FindObjectOfType<GameManager>().AddPoints(points);
 
-            // Revisar si el nivel está completo
+            // Check if the level is complete
             FindObjectOfType<GameManager>().CheckLevelComplete();
             
-            // Destruir el bloque
+            // Destroy the block
             Destroy(gameObject);
         }
     }

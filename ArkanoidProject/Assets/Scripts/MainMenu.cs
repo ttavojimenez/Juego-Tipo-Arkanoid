@@ -3,25 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Método para cargar el nivel 1
+    // Method to load level 1
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1"); // Cambia "Level1" al nombre exacto de tu escena de nivel 1
+        SceneManager.LoadScene("Level1"); 
     }
 
-    // Método para abrir el menú de selección de niveles
+    // Method to open the level selection menu
     public void OpenLevelSelection()
     {
-        SceneManager.LoadScene("LevelSelection"); // Cambia "LevelSelection" al nombre de tu escena de selección de niveles (si ya la tienes o la crearás)
+        SceneManager.LoadScene("LevelSelection");
     }
 
-    // Método para abrir las configuraciones de audio
+    // Method to open audio settings
     public void OpenSettings()
     {
-        SceneManager.LoadScene("Settings"); // Cambia "Settings" al nombre de tu escena de configuración (si la tienes o la crearás)
+        SceneManager.LoadScene("Settings"); 
     }
 
-    // Método para salir del juego
+    // Method to quit the game
     public void QuitGame()
     {
         Application.Quit(); // Este método cerrará el juego. No funcionará en el editor de Unity, solo en la compilación final.
