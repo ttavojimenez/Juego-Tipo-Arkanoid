@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     // References to UI Text elements
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
+    public static int finalScore; // Static variable to save the final score
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         UpdateUI(); // Update lives in UI
         if (lives <= 0)
         {
+            finalScore = score; // Save the final score
             SceneManager.LoadScene("GameOver"); // Load the Game Over scene if lives run out
         }
         else
