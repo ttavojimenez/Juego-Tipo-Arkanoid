@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -6,21 +7,15 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public int lives = 3;              // Player's starting lives
-    public int score = 100;            // Player's starting score
+    public int score = 100;               // Player's starting score
 
     // References to UI Text elements
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
     public static int finalScore; // Static variable to save the final score
 
-    public GameObject paddle;          // Reference to the player's paddle
-    private float originalPaddleSize;  // Store the original paddle size
-    private float originalBallSpeed;   // Store the original ball speed
-
     private void Start()
     {
-        originalPaddleSize = paddle.transform.localScale.x; // Store original paddle size
-        originalBallSpeed = FindObjectOfType<BallPhysics>().speed; // Store original ball speed
         UpdateUI(); // Initialize UI with starting values
     }
 
@@ -68,29 +63,5 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next level
         }
-    }
-
-    // Method to add an extra life (Power-Up effect)
-    public void AddLife()
-    {
-        lives++;
-        UpdateUI();
-    }
-
-    // Coroutine to temporarily increase paddle size (Power-Up effect)
-    public IEnumerator IncreasePaddleSize()
-    {
-        paddle.transform.localScale += new Vector3(1, 0, 0); // Increase paddle size
-        yield return new WaitForSeconds(10); // Duration of effect
-        paddle.transform.localScale = new Vector3(originalPaddleSize, paddle.transform.localScale.y, 0);
-    }
-
-    // Coroutine to temporarily increase ball speed (Power-Up effect)
-    public IEnumerator SpeedBoost()
-    {
-        BallPhysics ball = FindObjectOfType<BallPhysics>();
-        ball.speed *= 1.5f; // Increase ball speed
-        yield return new WaitForSeconds(10); // Duration of effect
-        ball.speed = originalBallSpeed;
     }
 }

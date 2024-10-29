@@ -25,4 +25,14 @@ public class PlayerMovement : MonoBehaviour
         transform.position = startPosition;
         playerRigidbody2D.velocity = Vector2.zero;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        PowerUpBase powerUp = other.GetComponent<PowerUpBase>();
+        if(powerUp != null)
+        {
+            powerUp.ActivatePowerUp(this.gameObject);
+            Destroy(other.gameObject);
+        }
+    }
 }
