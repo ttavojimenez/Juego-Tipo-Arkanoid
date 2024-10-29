@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6697309027066959423}
   - component: {fileID: -1473887680501493088}
-  - component: {fileID: 2766112795233819133}
   - component: {fileID: 2124102308206905998}
   m_Layer: 0
   m_Name: PaddleSizePowerUp
@@ -80,19 +79,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2766112795233819133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144919158320109219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd21804d908bc944ab66f41911a4fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sizeMultiplier: 1.5
 --- !u!50 &2124102308206905998
 Rigidbody2D:
   serializedVersion: 4

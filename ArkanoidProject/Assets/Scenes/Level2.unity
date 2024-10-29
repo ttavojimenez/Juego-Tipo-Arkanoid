@@ -2717,7 +2717,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1521209998}
+    m_TransformParent: {fileID: 1415746093}
     m_Modifications:
     - target: {fileID: 4414827906368016564, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_Size.x
@@ -2777,23 +2777,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.29855135
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.63058686
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.79
+      value: 5.833333
       objectReference: {fileID: 0}
     - target: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.53999996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5243,7 +5243,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 128772298121997856, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8693206575592113527, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 882439311}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4716012131783652344, guid: 40b6f44ad1f34c74e915f3069a3ab7e8, type: 3}
       insertIndex: -1
@@ -5876,7 +5879,6 @@ Transform:
   - {fileID: 1608736677}
   - {fileID: 525356433}
   - {fileID: 1444542144}
-  - {fileID: 882439311}
   - {fileID: 1415746093}
   - {fileID: 1062132190}
   - {fileID: 748277574}
