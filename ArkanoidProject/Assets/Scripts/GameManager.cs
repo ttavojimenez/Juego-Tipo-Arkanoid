@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public static int finalScore; // Static variable to save the final score
 
+    public bool hasPowerUps;
+
     private void Start()
     {
         UpdateUI(); // Initialize UI with starting values

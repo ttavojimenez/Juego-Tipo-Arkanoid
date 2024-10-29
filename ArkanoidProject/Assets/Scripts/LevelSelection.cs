@@ -24,6 +24,6 @@ public class LevelSelection : MonoBehaviour
     // Method to load Level 3
     public void LoadLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Brick : MonoBehaviour
 {
     public int points = 100; // Points that this block adds when destroyed
+    public GameObject[] powerUps;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,22 +16,23 @@ public class Brick : MonoBehaviour
 
             // Check if the level is complete
             FindObjectOfType<GameManager>().CheckLevelComplete();
-            
-            // Destroy the block
+
+            // Call DestroyBrick to handle power-ups and destruction
             DestroyBrick();
         }
     }
 
-    public GameObject[] powerUps;
-
     public void DestroyBrick()
-{
-    if (powerUps.Length > 0 && Random.value < 0.35f)
     {
-        int randomIndex = Random.Range(0, powerUps.Length);
-        Instantiate(powerUps[randomIndex], transform.position, Quaternion.identity);
+        // Check if power-ups are enabled for this level
+        if (FindObjectOfType<GameManager>().hasPowerUps && powerUps.Length > 0 && Random.value < 0.4f)
+        {
+            int randomIndex = Random.Range(0, powerUps.Length);
+            Instantiate(powerUps[randomIndex], transform.position, Quaternion.identity);
+        }
+
+        // Destroy the block
+        Destroy(gameObject);
     }
-    Destroy(gameObject); 
 }
 
-}

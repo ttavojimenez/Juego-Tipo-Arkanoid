@@ -5846,6 +5846,7 @@ MonoBehaviour:
   score: 0
   livesText: {fileID: 1757173008}
   scoreText: {fileID: 1765780152}
+  hasPowerUps: 1
 --- !u!4 &1521209998
 Transform:
   m_ObjectHideFlags: 0
