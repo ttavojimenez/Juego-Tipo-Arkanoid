@@ -10,8 +10,7 @@ public class BallPhysics : MonoBehaviour
 
     public AudioSource audioSource;
 
-    public AudioClip playerSound, brickSound, wallSound, gameOverSound, strongBrickSound;
-
+    public AudioClip playerSound, brickSound, wallSound, gameOverSound,strongBrickSound;
     private void Start()
     {
         startPosition = transform.position;
@@ -57,21 +56,6 @@ public class BallPhysics : MonoBehaviour
             audioSource.clip = wallSound;
             audioSource.Play();
         }
-
-        // Ajuste de ángulo para evitar ángulos fijos
-        Vector2 newVelocity = rigidBody2D.velocity;
-
-        // Evita que el ángulo sea demasiado horizontal o vertical
-        if (Mathf.Abs(newVelocity.x) < 0.1f)
-        {
-            newVelocity.x += Random.Range(0.2f, 0.4f) * Mathf.Sign(newVelocity.x);
-        }
-        if (Mathf.Abs(newVelocity.y) < 0.1f)
-        {
-            newVelocity.y += Random.Range(0.2f, 0.4f) * Mathf.Sign(newVelocity.y);
-        }
-
-        rigidBody2D.velocity = newVelocity.normalized * speed;
     }
 
     // Resets the ball position and launches it again after reset
@@ -82,4 +66,3 @@ public class BallPhysics : MonoBehaviour
         Invoke("LaunchBall", 1.0f); // Delay before relaunching
     }
 }
-
